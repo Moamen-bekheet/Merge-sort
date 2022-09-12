@@ -15,21 +15,21 @@ function mergeArrs(leftArr, rightArr){
     let sortedArr = [];
     while((i<leftArr.length)&&(j<rightArr.length)){
         if(leftArr[i]<=rightArr[j]){
-            sortedArr.push(leftArr[i])
-            i += 1; 
+            sortedArr.push(leftArr[i]);
+            i++;
         }
         else{
-            sortedArr.push(rightArr[i]);
-            j += 1;
+            sortedArr.push(rightArr[j]);
+            j++;
         }
     }
-    while((!(i<leftArr.length))&&(j<rightArr.length)){
+    while((i>=leftArr.length)&&(j<rightArr.length)){
         sortedArr.push(rightArr[j]);
-        j += 1;
+        j++;
     }
-    while((i<leftArr.length)&&(!(j<rightArr.length))){
-        sortedArr.push(rightArr[i]);
-        i += 1;
+    while((i<leftArr.length)&&(j>=rightArr.length)){
+        sortedArr.push(leftArr[i]);
+        i++;
     }
     return sortedArr;
 }
